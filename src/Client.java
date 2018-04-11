@@ -6,20 +6,20 @@ public class Client {
     
     public void runTest()
     {
-        BuildWaitingList buildWaitingList = new BuildWaitingList();
-        buildWaitingList.buidWaitingList();
+        WaitingList waitingList = new WaitingList();
+        waitingList.buidWaitingList();
 
         Random rand = new Random();
 
         for(int i = 0; i < 20; i++){
             try {
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
             int availableSeats = rand.nextInt(5) + 1;
-            buildWaitingList.handleRequest(availableSeats);
+            waitingList.handleRequest(availableSeats);
         }
 
     }

@@ -17,10 +17,15 @@ public class ConcreteHandlerDefault implements Handler {
     public void handleRequest(int tableSeatsNum ) {
         //System.out.println( "R1 got the request...");
         System.out.println( this.getClass().getName() + " => This one is mine!");
-
-        System.out.println("Wait list is empty now");
-        BuildWaitingList b = new BuildWaitingList();
+        WaitingList b = new WaitingList();
         b.tableAvaible.add(tableSeatsNum);
+
+        if(b.waitList.size() > 0) {
+            System.out.println("Table of  " + tableSeatsNum + " can not accomodate any parties on the wait list.");
+            return;
+        }
+
+        System.out.println("Wait list is empty.");
 
     }
 

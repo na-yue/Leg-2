@@ -20,7 +20,7 @@ public class ConcreteHandler3 implements Handler {
 
     public void handleRequest(int tableSeatsNum ) {
         // System.out.println( "R1 got the request...");
-        System.out.println( this.getClass().getName() + " => This one is mine!");
+        // System.out.println( this.getClass().getName() + " => This one is mine!");
 
 
         if ( tableSeatsNum >= 3 && q.size() > 0 ) {
