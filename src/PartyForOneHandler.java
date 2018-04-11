@@ -1,15 +1,18 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
-public class ConcreteHandler2 implements Handler {
+public class PartyForOneHandler implements Handler {
 
     private Handler successor = null;
     Queue<Customer> q = new LinkedList();
 
-    public ConcreteHandler2() {
+    WaitingList b = new WaitingList();
+
+    public PartyForOneHandler() {
     }
 
-    public ConcreteHandler2(Customer c) {
+    public PartyForOneHandler(Customer c) {
         q.add(c);
     }
 
@@ -19,15 +22,15 @@ public class ConcreteHandler2 implements Handler {
 
     public void handleRequest(int tableSeatsNum ) {
         // System.out.println( "R1 got the request...");
-        // System.out.println( this.getClass().getName() + " => This one is mine!");
+       // System.out.println( this.getClass().getName() + " => This one is mine!");
 
-
-        if ( tableSeatsNum >= 2 && q.size() > 0 ) {
+        if ( tableSeatsNum >= 1 && q.size() > 0 ) {
 
             while(q.size() > 0){
 
                 Customer front = q.remove();
                 Boolean reply = front.reply();
+                b.waitList.remove(front);
 
                 if(reply) return;
             }
@@ -45,6 +48,5 @@ public class ConcreteHandler2 implements Handler {
     public void setSuccessor(Handler next) {
         this.successor = next ;
     }
-
 
 }

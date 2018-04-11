@@ -1,12 +1,12 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ConcreteHandlerDefault implements Handler {
+public class DefaultHandler implements Handler {
 
     private Handler successor = null;
     Queue<Customer> q = new LinkedList();
 
-    public ConcreteHandlerDefault() {
+    public DefaultHandler() {
     }
 
 

@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.util.*;
 
 public class WaitingList {
@@ -6,13 +5,13 @@ public class WaitingList {
     // this list keep avaible tables which are not take by customers
     public static List<Integer> tableAvaible= new ArrayList<>();
 
-    public static Queue<Customer> waitList = new LinkedList<>();
+    public static List<Customer> waitList = new ArrayList<>();
 
-    Handler h1 = new ConcreteHandler1() ;
-    Handler h2 = new ConcreteHandler2() ;
-    Handler h3 = new ConcreteHandler3() ;
-    Handler h4 = new ConcreteHandler4() ;
-    Handler d  = new ConcreteHandlerDefault() ;
+    Handler h1 = new PartyForOneHandler() ;
+    Handler h2 = new PartyForTwoHandler() ;
+    Handler h3 = new PartyForThreeHandler() ;
+    Handler h4 = new PartyForFourHandler() ;
+    Handler d  = new DefaultHandler() ;
 
     public WaitingList() {
         h4.setSuccessor(h3);

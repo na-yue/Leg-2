@@ -7,7 +7,7 @@ public class Client {
     public void runTest()
     {
         WaitingList waitingList = new WaitingList();
-        waitingList.buidWaitingList();
+       // waitingList.buidWaitingList();
 
         Random rand = new Random();
 

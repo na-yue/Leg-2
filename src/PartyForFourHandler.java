@@ -1,16 +1,18 @@
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
-public class ConcreteHandler1 implements Handler {
+// this is the last handler
+public class PartyForFourHandler implements Handler {
 
     private Handler successor = null;
     Queue<Customer> q = new LinkedList();
 
-    public ConcreteHandler1() {
+    WaitingList b = new WaitingList();
+
+    public PartyForFourHandler() {
     }
 
-    public ConcreteHandler1(Customer c) {
+    public PartyForFourHandler(Customer c) {
         q.add(c);
     }
 
@@ -20,15 +22,16 @@ public class ConcreteHandler1 implements Handler {
 
     public void handleRequest(int tableSeatsNum ) {
         // System.out.println( "R1 got the request...");
-       // System.out.println( this.getClass().getName() + " => This one is mine!");
+        // System.out.println( this.getClass().getName() + " => This one is mine!");
 
 
-        if ( tableSeatsNum >= 1 && q.size() > 0 ) {
+        if ( tableSeatsNum == 4 && q.size() > 0 ) {
 
             while(q.size() > 0){
 
                 Customer front = q.remove();
                 Boolean reply = front.reply();
+                b.waitList.remove(front);
 
                 if(reply) return;
             }
