@@ -20,7 +20,7 @@ public class DefaultHandler implements Handler {
         WaitingList b = new WaitingList();
         b.tableAvaible.add(tableSeatsNum);
 
-        if(b.waitList.size() > 0) {
+        if(Global.waitList.size() > 0) {
             System.out.println("Table of  " + tableSeatsNum + " can not accomodate any parties on the wait list.");
             return;
         }

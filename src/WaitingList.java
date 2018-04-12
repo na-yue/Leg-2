@@ -1,11 +1,13 @@
 import java.util.*;
 
+
+
 public class WaitingList {
 
     // this list keep avaible tables which are not take by customers
     public static List<Integer> tableAvaible= new ArrayList<>();
 
-    public static List<Customer> waitList = new ArrayList<>();
+
 
     Handler h1 = new PartyForOneHandler() ;
     Handler h2 = new PartyForTwoHandler() ;
@@ -42,7 +44,7 @@ public class WaitingList {
 //            String customerName = "Customer" + i;
 //            Customer c = new Customer(customerName, phoneNumber, partyNumber);
 
-            waitList.add(c);
+            Global.waitList.add(c);
             distribute(c);
 
 //        }

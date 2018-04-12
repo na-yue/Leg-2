@@ -7,7 +7,7 @@ public class PartyForOneHandler implements Handler {
     private Handler successor = null;
     Queue<Customer> q = new LinkedList();
 
-    WaitingList b = new WaitingList();
+   // WaitingList b = new WaitingList();
 
     public PartyForOneHandler() {
     }
@@ -30,7 +30,7 @@ public class PartyForOneHandler implements Handler {
 
                 Customer front = q.remove();
                 Boolean reply = front.reply();
-                b.waitList.remove(front);
+                Global.waitList.remove(front);
 
                 if(reply) return;
             }
