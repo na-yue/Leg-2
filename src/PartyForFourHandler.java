@@ -45,9 +45,11 @@ public class PartyForFourHandler implements Handler {
         }
     }
 
-
     public void setSuccessor(Handler next) {
         this.successor = next ;
     }
 
+    public Queue<Customer> getQ() {
+        return q;
+    }
 }
