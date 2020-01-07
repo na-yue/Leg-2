@@ -10,7 +10,7 @@ public class Client {
         waitingList.buidWaitingList();
 
         Random rand = new Random();
-
+        int temp = rand.nextInt();
         for(int i = 0; i < 20; i++){
             try {
                 Thread.sleep(1000);
