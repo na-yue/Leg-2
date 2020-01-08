@@ -1,16 +1,20 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Client {
-    
+
     public void runTest()
     {
         WaitingList waitingList = new WaitingList();
         waitingList.buidWaitingList();
 
-        Random rand = new Random();
 
+
+        Random rand = new Random();
+        int temp = rand.nextInt();
         for(int i = 0; i < 20; i++){
             try {
                 Thread.sleep(1000);
@@ -27,12 +31,14 @@ public class Client {
 //        waitingList.handleRequest(5);
 
     }
-    
+
     public static void main( String [] args )
     {
         Client c = new Client() ;
         c.runTest() ;
 
+        // hashmap is not thread safe.
+        Map<Integer, Integer> map = new HashMap<>();
     }
     
 
